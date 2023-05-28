@@ -3,9 +3,8 @@ import java.awt.event.*;
 import java.util.Random;
 import javax.swing.*;
 public class MyPanel extends JPanel implements ActionListener{
-    final int PANEL_WIDTH = 500;
-    final int PANEL_HEIGHT = 500;
-    Image enemy;
+    final int PANEL_WIDTH = 1280;
+    final int PANEL_HEIGHT = 720;
     Image backgroundImage;
     Timer timer;
     Random rand = new Random();
@@ -17,7 +16,7 @@ public class MyPanel extends JPanel implements ActionListener{
     MyPanel(){
         this.setPreferredSize(new Dimension(PANEL_WIDTH,PANEL_HEIGHT));
         this.setBackground(Color.black);
-        backgroundImage = new ImageIcon("Assets/sktybuc.png").getImage();
+//        backgroundImage = new ImageIcon("Assets/sktybuc.png").getImage();
         timer = new Timer(10, this);
         timer.start();
     }
