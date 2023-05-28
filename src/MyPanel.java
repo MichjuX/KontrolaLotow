@@ -39,5 +39,6 @@ public class MyPanel extends JPanel implements ActionListener{
             x=x+xVelocity;
             y=y+yVelocity;
             repaint();
+
     }
 }
