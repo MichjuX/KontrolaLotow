@@ -17,7 +17,6 @@ public class MyPanel extends JPanel implements ActionListener{
     MyPanel(){
         this.setPreferredSize(new Dimension(PANEL_WIDTH,PANEL_HEIGHT));
         this.setBackground(Color.black);
-        enemy = new ImageIcon("Assets/jakowluk.png").getImage();
         backgroundImage = new ImageIcon("Assets/sktybuc.png").getImage();
         timer = new Timer(10, this);
         timer.start();
@@ -26,15 +25,15 @@ public class MyPanel extends JPanel implements ActionListener{
         super.paint(g);
         super.paintComponent(g);
         Graphics2D g2D = (Graphics2D) g;
+        g2D.setPaint(Color.blue);
         g2D.drawRect(x, y, 100, 100);
-        g2D.drawImage(enemy, x, y, this);
 
     }
     @Override
     public void actionPerformed(ActionEvent e){
-        if(x>=PANEL_WIDTH-enemy.getWidth(null) || x<0 ){
+        if(x>=PANEL_WIDTH-100 || x<0 ){
             xVelocity = xVelocity * -1;
-        }if(y>=PANEL_HEIGHT-enemy.getHeight(null) || y<0 ){
+        }if(y>=PANEL_HEIGHT-100 || y<0 ){
             yVelocity = yVelocity * -1;
         }
             x=x+xVelocity;
