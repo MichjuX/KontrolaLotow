@@ -3,27 +3,19 @@ import java.awt.geom.Path2D;
 import javax.swing.*;
 
 
-public class Building extends JPanel {
-    private int x;
-    private int y;
-    private int h;
-    private int a;
-
-    Building(int x, int y, int h, int a) {
-        this.x = x;
-        this.y = y;
-        this.h = h;
-        this.a = a;
+public class Building extends StationaryObject {
+    public Building(Point position, double height, int parametr) {
+        super(position,height,parametr);
     }
 
-    public int getHeihgt() {
-        return h;
+    public double getHeihgt() {
+        return height;
     }
+
     @Override
-    public void paintComponent(Graphics g){
-        super.paintComponent(g);
+    public void paintComponent(Graphics g) {
         Graphics2D g2D = (Graphics2D) g;
-        g2D.setPaint(new Color(255,255,255));
-        g2D.drawRect(x,y,a,a+50);
+        g2D.setPaint(new Color(100, 255, 255));
+        g2D.drawRect((int) position.getX(), (int) position.getY(), parametr, parametr + 50);
     }
 }

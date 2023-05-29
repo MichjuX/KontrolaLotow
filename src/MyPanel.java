@@ -3,9 +3,9 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.*;
-public class MyPanel extends JPanel implements ActionListener{
-    final int PANEL_WIDTH = 1920;
-    final int PANEL_HEIGHT = 1080;
+public class MyPanel extends JPanel implements ActionListener {
+    final int PANEL_WIDTH = 1280;
+    final int PANEL_HEIGHT = 720;
     Image backgroundImage;
     Timer timer;
     Random rand = new Random();
@@ -14,8 +14,9 @@ public class MyPanel extends JPanel implements ActionListener{
     int x = 0;
     int y = 0;
     ArrayList<AirShip> airShips;
-
-    MyPanel() {
+    StationaryObject st = new StationaryObject();
+    Map map = new Map("src\\mapa.txt", st);
+    MyPanel() throws Exception {
         this.setPreferredSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
         this.setBackground(Color.black);
         //backgroundImage = new ImageIcon("Assets/sktybuc.png").getImage();
@@ -25,6 +26,7 @@ public class MyPanel extends JPanel implements ActionListener{
         AirShip airShip = new AirShip(new Point(100, 100), 50, 20);//przykladowy
         //airShip.setFlight();
         airShips.add(airShip);
+
     }
 
     public void paint(Graphics g) {
@@ -33,13 +35,17 @@ public class MyPanel extends JPanel implements ActionListener{
         Graphics2D g2D = (Graphics2D) g;
         g2D.setPaint(new Color(255, 255, 255));
         g2D.drawRect(x, y, 100, 100);
-        for (AirShip airShip : airShips) {
+        map.paint(g);
+
+        }
+
+        /*for (AirShip airShip : airShips) {
             // Rysowanie samolotu
             g2D.setPaint(Color.red);
             g2D.drawRect((int) airShip.getCurrentLocation().getX(), (int) airShip.getCurrentLocation().getY(), 50, 50);
-        }
+        }*/
 
-    }
+    //}
 
     @Override
     public void actionPerformed(ActionEvent e) {

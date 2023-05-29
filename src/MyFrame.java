@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 public class MyFrame extends JFrame {
     MyPanel panel;
 
-    MyFrame() {
+    MyFrame() throws Exception {
         JFrame frame = new JFrame("Radar");
 
         panel = new MyPanel();
@@ -28,7 +28,8 @@ public class MyFrame extends JFrame {
         JMenuItem option = new JMenuItem("Opcje");
 
         legenda.addActionListener((ActionEvent e) -> JOptionPane.showMessageDialog(frame, "Leganda:\n" +
-                        "* Złote 10-cio katy - drzewa", "Legenda",
+                        "* Złote 10-cio katy - drzewa\n" +
+                        "* Turkusowe protokaty - budynki\n", "Legenda",
                 JOptionPane.INFORMATION_MESSAGE));
         option.addActionListener((ActionEvent e) -> JOptionPane.showMessageDialog(frame, "Opcje:\n", "Opcje",
                 JOptionPane.INFORMATION_MESSAGE));
