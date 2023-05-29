@@ -19,11 +19,11 @@ public class Map extends JPanel {
             int height = scanner.nextInt();
             int parametr = scanner.nextInt();
 
-            if (kind.equals("t") || kind.equals("\r\nt")) {
+            if (kind.contains("t")) {
                 stationaryObject.addTree(new Tree(new Point(x, y), height, parametr));
                 stationaryObjects.add(stationaryObject);
             }
-            if (kind.equals("b") || kind.equals("\r\nb")) {
+            if (kind.contains("b")) {
                 stationaryObject.addBuilding(new Building(new Point(x, y), height, parametr));
                 stationaryObjects.add(stationaryObject);
             }

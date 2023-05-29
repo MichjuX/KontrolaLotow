@@ -15,8 +15,7 @@ public class MyPanel extends JPanel implements ActionListener {
     int x = 0;
     int y = 0;
     ArrayList<AirShip> airShips;
-    StationaryObject st = new StationaryObject();
-    Map map = new Map("src\\mapa.txt", st);
+    Map map = new Map("src\\mapa.txt", new StationaryObject());
 
     MyPanel() throws Exception {
         this.setPreferredSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
@@ -38,7 +37,6 @@ public class MyPanel extends JPanel implements ActionListener {
         g2D.setPaint(new Color(255, 255, 255));
         g2D.drawRect(x, y, 100, 100);
         map.paint(g);
-
     }
 
         /*for (AirShip airShip : airShips) {
