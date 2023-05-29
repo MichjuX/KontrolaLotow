@@ -8,7 +8,7 @@ public class Rectangle {
         this.width = width;
         this.height = height;
     }
-    public void moveRect(double dx, double dy)
+    public void move(double dx, double dy)
     {
         position.move(dx, dy);
     }

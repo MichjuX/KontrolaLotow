@@ -6,11 +6,11 @@ public class Line {
         this.beginning=beginning;
         this.ending=ending;
     }
-    public Point GetBeginning()
+    public Point getBeginning()
     {
         return this.beginning;
     }
-    public Point GetEnding()
+    public Point getEnding()
     {
         return this.ending;
     }

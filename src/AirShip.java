@@ -1,4 +1,4 @@
-public class AirShip {// imo zwiazek z puntkem ma
+public class AirShip {//
     protected Route Flight;
     protected Rectangle HitBox;
     protected Point currentLocation;
@@ -12,7 +12,7 @@ public class AirShip {// imo zwiazek z puntkem ma
     public void move(double dx, double dy) //tu jaoks trzeba zrobic zeby np airship dziedziczyl punkt z rectangle albo odwrotnie
     {
         currentLocation.move(dx,dy);
-        HitBox.moveRect(dx, dy);
+        HitBox.move(dx, dy);
     }
     public void setFlight(Route route)
     {
@@ -36,4 +36,7 @@ public class AirShip {// imo zwiazek z puntkem ma
     }
 
 
+    public Point getCurrentLocation() {
+        return currentLocation;
+    }
 }
