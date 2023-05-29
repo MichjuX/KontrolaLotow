@@ -5,7 +5,7 @@ import javax.swing.*;
 
 public class Building extends StationaryObject {
     public Building(Point position, double height, int parametr) {
-        super(position,height,parametr);
+        super(position, height, parametr);
     }
 
     public double getHeihgt() {

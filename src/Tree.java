@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class Tree extends StationaryObject {
     public Tree(Point position, double height, int parametr) {
-        super(position,height,parametr);
+        super(position, height, parametr);
     }
 
     public double getHeihgt() {

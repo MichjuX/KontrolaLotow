@@ -3,19 +3,21 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.*;
+
 public class MyPanel extends JPanel implements ActionListener {
     final int PANEL_WIDTH = 1280;
     final int PANEL_HEIGHT = 720;
     Image backgroundImage;
     Timer timer;
     Random rand = new Random();
-    int xVelocity = (Math.abs(rand.nextInt()%5))+1;
-    int yVelocity = (Math.abs(rand.nextInt()%5))+1;
+    int xVelocity = (Math.abs(rand.nextInt() % 5)) + 1;
+    int yVelocity = (Math.abs(rand.nextInt() % 5)) + 1;
     int x = 0;
     int y = 0;
     ArrayList<AirShip> airShips;
     StationaryObject st = new StationaryObject();
     Map map = new Map("src\\mapa.txt", st);
+
     MyPanel() throws Exception {
         this.setPreferredSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
         this.setBackground(Color.black);
@@ -37,7 +39,7 @@ public class MyPanel extends JPanel implements ActionListener {
         g2D.drawRect(x, y, 100, 100);
         map.paint(g);
 
-        }
+    }
 
         /*for (AirShip airShip : airShips) {
             // Rysowanie samolotu

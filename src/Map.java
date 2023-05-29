@@ -36,7 +36,6 @@ public class Map extends JPanel {
         Graphics2D g2D = (Graphics2D) g;
         StationaryObject st = stationaryObjects.get(0);
         st.paintComponent(g);
-
     }
 
 
