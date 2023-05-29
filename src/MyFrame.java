@@ -1,33 +1,40 @@
 import javax.swing.*;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class MyFrame extends JFrame {
     MyPanel panel;
-    MyFrame(){
-        JFrame frame = new JFrame("test");
+
+    MyFrame() {
+        JFrame frame = new JFrame("Radar");
+
         panel = new MyPanel();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(panel);
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-        createMenu(frame);
-
+        frame.setJMenuBar(createMenu(frame));
         //Wyswietla okno
         frame.pack();
         frame.setVisible(true);
+
     }
-    private void createMenu(JFrame frame) {
+
+    private JMenuBar createMenu(JFrame frame) {
         JMenuBar menuBar = new JMenuBar();
-        JMenu menu = new JMenu("Menu");
-        JMenuItem item1 = new JMenuItem("Info");
+        JMenuItem legenda = new JMenuItem("Legenda");
+        JMenuItem option = new JMenuItem("Opcje");
 
-        item1.addActionListener((ActionEvent e) -> JOptionPane.showMessageDialog(frame, "Funkcjonalnosc:", "Info",
+        legenda.addActionListener((ActionEvent e) -> JOptionPane.showMessageDialog(frame, "Leganda:\n" +
+                        "* Złote 10-cio katy - drzewa", "Legenda",
                 JOptionPane.INFORMATION_MESSAGE));
-
-        menu.add(item1);
-        menuBar.add(item1);
-        frame.setJMenuBar(menuBar);
+        option.addActionListener((ActionEvent e) -> JOptionPane.showMessageDialog(frame, "Opcje:\n", "Opcje",
+                JOptionPane.INFORMATION_MESSAGE));
+        menuBar.setLayout((new FlowLayout(FlowLayout.LEFT)));
+        menuBar.add(legenda);
+        menuBar.add(option);
+        return menuBar;
     }
 }
