@@ -1,14 +1,14 @@
 import javax.swing.*;
-import java.awt.*;
 
 public class MyFrame extends JFrame {
     MyPanel panel;
     MyFrame(){
+        JFrame frame = new JFrame("test");
         panel = new MyPanel();
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.add(panel);
-        this.pack();
-        this.setLocationRelativeTo(null);
-        this.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(panel);
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
     }
 }
