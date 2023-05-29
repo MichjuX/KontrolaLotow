@@ -3,8 +3,8 @@ import java.awt.event.*;
 import java.util.Random;
 import javax.swing.*;
 public class MyPanel extends JPanel implements ActionListener{
-    final int PANEL_WIDTH = 1280;
-    final int PANEL_HEIGHT = 720;
+    final int PANEL_WIDTH = 1920;
+    final int PANEL_HEIGHT = 1080;
     Image backgroundImage;
     Timer timer;
     Random rand = new Random();
@@ -12,11 +12,12 @@ public class MyPanel extends JPanel implements ActionListener{
     int yVelocity = (Math.abs(rand.nextInt()%5))+1;
     int x = 0;
     int y = 0;
+    AirShip airShip;
 
     MyPanel(){
         this.setPreferredSize(new Dimension(PANEL_WIDTH,PANEL_HEIGHT));
         this.setBackground(Color.black);
-//        backgroundImage = new ImageIcon("Assets/sktybuc.png").getImage();
+        //backgroundImage = new ImageIcon("Assets/sktybuc.png").getImage();
         timer = new Timer(10, this);
         timer.start();
     }
@@ -38,6 +39,16 @@ public class MyPanel extends JPanel implements ActionListener{
             x=x+xVelocity;
             y=y+yVelocity;
             repaint();
+//        if (airShip.getX() + airShip.getWidth() >= PANEL_WIDTH || airShip.getX() < 0) {
+//            airShip.reverseXVelocity();
+        }
+//        if (airShip.getY() + airShip.getHeight() >= PANEL_HEIGHT || airShip.getY() < 0) {
+//            airShip.reverseYVelocity();
+//        }
+//        double dx = airShip.getVelocity() * airShip.getFlight().getDirectionX();
+//        double dy = airShip.getVelocity() * airShip.getFlight().getDirectionY();
+//        airShip.move(dx, dy);
+//        repaint();
+    //}
 
-    }
 }
