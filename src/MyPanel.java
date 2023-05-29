@@ -24,7 +24,7 @@ public class MyPanel extends JPanel implements ActionListener{
         super.paint(g);
         super.paintComponent(g);
         Graphics2D g2D = (Graphics2D) g;
-        g2D.setPaint(new Color(0,0,0));
+        g2D.setPaint(new Color(255,255,255));
         g2D.drawRect(x, y, 100, 100);
 
     }
