@@ -2,15 +2,14 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
 import javax.swing.*;
-
-public class MyPanel extends JPanel implements ActionListener {
-    final int PANEL_WIDTH = 1280;
-    final int PANEL_HEIGHT = 720;
+public class MyPanel extends JPanel implements ActionListener{
+    final int PANEL_WIDTH = 1920;
+    final int PANEL_HEIGHT = 1080;
     Image backgroundImage;
     Timer timer;
     Random rand = new Random();
-    int xVelocity = (Math.abs(rand.nextInt() % 5)) + 1;
-    int yVelocity = (Math.abs(rand.nextInt() % 5)) + 1;
+    int xVelocity = (Math.abs(rand.nextInt()%5))+1;
+    int yVelocity = (Math.abs(rand.nextInt()%5))+1;
     int x = 0;
     int y = 0;
 
