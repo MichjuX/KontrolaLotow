@@ -17,4 +17,8 @@ public class Rectangle {
 //
 //    }
 
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
 }

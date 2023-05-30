@@ -25,8 +25,10 @@ public class MyPanel extends JPanel implements ActionListener {
         timer.start();
         airShips = new ArrayList<>();//lista airships
         AirShip airShip = new AirShip(new Point(100, 100), 50, 20);//przykladowy
+        AirShip airShip1 = new AirShip(new Point(500, 500 ), 500, 100);//przykladowy
         //airShip.setFlight();
         airShips.add(airShip);
+        airShips.add(airShip1);
 
     }
 
@@ -37,15 +39,15 @@ public class MyPanel extends JPanel implements ActionListener {
         g2D.setPaint(new Color(255, 255, 255));
         g2D.drawRect(x, y, 100, 100);
         map.paint(g);
-    }
+    //}
 
-        /*for (AirShip airShip : airShips) {
+        for(AirShip airShip : airShips) {
             // Rysowanie samolotu
             g2D.setPaint(Color.red);
-            g2D.drawRect((int) airShip.getCurrentLocation().getX(), (int) airShip.getCurrentLocation().getY(), 50, 50);
-        }*/
+            g2D.drawRect((int) airShip.getCurrentLocation().getX(), (int) airShip.getCurrentLocation().getY(), 50, 50);//to pewnie da sie uproscic
+        }
 
-    //}
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -59,7 +61,7 @@ public class MyPanel extends JPanel implements ActionListener {
         y = y + yVelocity;
         repaint();
         for (AirShip airShip : airShips) {
-            // Aktualizacja położenia samolotu na podstawie trasy lotu
+//             Aktualizacja położenia samolotu na podstawie trasy lotu
 //            double dx = 10; // Oblicz przesunięcie w osi x na podstawie trasy lotu
 //            double dy = 10; // Oblicz przesunięcie w osi y na podstawie trasy lotu
 //            airShip.move(dx, dy);

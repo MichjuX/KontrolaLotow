@@ -26,8 +26,8 @@ public class MyFrame extends JFrame {
         JMenuBar menuBar = new JMenuBar();
         JMenuItem legenda = new JMenuItem("Legenda");
         JMenuItem options = new JMenu("Opcje");
-        JMenuItem menuItem1 = new JMenuItem("Opcja 1");
-        JMenuItem menuItem2 = new JMenuItem("Opcja 2");
+        JMenuItem menuItem1 = new JMenuItem("Modyfikacja statkow");
+        JMenuItem menuItem2 = new JMenuItem("nicnaraziex");
         options.add(menuItem1);
         options.add(menuItem2);
         legenda.addActionListener((ActionEvent e) -> JOptionPane.showMessageDialog(frame, "Leganda:\n" +
