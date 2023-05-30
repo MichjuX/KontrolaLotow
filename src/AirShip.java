@@ -4,6 +4,7 @@ public class AirShip {//
     protected Point currentLocation;
     protected double velocity;
     protected double height; // i prosokat tez musi miec te sama wysokosc
+    private int currentLineIndex = 0;
     public AirShip(Point startingLocation, double width, double height)
     {
         this.currentLocation=startingLocation;
@@ -13,6 +14,29 @@ public class AirShip {//
     {
         currentLocation.move(dx,dy);
         hitBox.move(dx, dy);
+    }
+    // Przesuwa AirShip wzdłuż jego trasy
+    public void moveAlongRoute() {
+        Line currentLine = flight.getLine(currentLineIndex);
+        Point direction = currentLine.direction();
+
+        // Przesunięcie AirShip o jednostkową odległość w kierunku linii
+        move(direction.getX(), direction.getY());
+
+        // Jeżeli AirShip doszedł do końca bieżącej linii
+        if (currentLocation.getX() >= currentLine.getEnding().getX() &&
+                currentLocation.getY() >= currentLine.getEnding().getY()) {
+
+            // Przejście do następnej linii
+            currentLineIndex++;
+
+            // Jeżeli AirShip doszedł do końca trasy
+            if (currentLineIndex >= flight.getLinesNumber()) {
+
+                // Powrót do początku trasy
+                currentLineIndex = 0;
+            }
+        }
     }
     public void setFlight(Route route)
     {

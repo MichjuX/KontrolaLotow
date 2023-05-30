@@ -8,11 +8,12 @@ public class Route {// mysle ze tu kompozycja z Line bedzie
     public Route(Line line)//zeby mozna bylo stworzyc trase dodajac po prostu jeden odcinek
     {
         this.lines = new ArrayList<>();
-        lines.add(line);
+        if (line != null)
+            this.lines.add(line);
     }
     public void addLine(Line line)
     {
-        lines.add(line);
+        this.lines.add(line);
     }
     public void addLine(Point p1, Point p2)//dodajesz linie zaczynajac od punktow
     {
@@ -26,6 +27,10 @@ public class Route {// mysle ze tu kompozycja z Line bedzie
     public int getLinesNumber()
     {
         return lines.size();
+    }
+    // Zwraca linie na zadanej pozycji w trasie
+    public Line getLine(int index) {
+        return lines.get(index);
     }
 
 }
