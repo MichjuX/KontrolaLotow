@@ -33,7 +33,6 @@ public class MyPanel extends JPanel implements ActionListener {
     }
 
     public void paint(Graphics g) {
-        super.paint(g);
         super.paintComponent(g);
         Graphics2D g2D = (Graphics2D) g;
         g2D.setPaint(new Color(255, 255, 255));
