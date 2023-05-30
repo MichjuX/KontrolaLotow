@@ -25,17 +25,42 @@ public class MyFrame extends JFrame {
     private JMenuBar createMenu(JFrame frame) {
         JMenuBar menuBar = new JMenuBar();
         JMenuItem legenda = new JMenuItem("Legenda");
-        JMenuItem option = new JMenuItem("Opcje");
-
+        JMenuItem options = new JMenu("Opcje");
+        JMenuItem menuItem1 = new JMenuItem("Opcja 1");
+        JMenuItem menuItem2 = new JMenuItem("Opcja 2");
+        options.add(menuItem1);
+        options.add(menuItem2);
         legenda.addActionListener((ActionEvent e) -> JOptionPane.showMessageDialog(frame, "Leganda:\n" +
                         "* Złote 10-cio katy - drzewa\n" +
                         "* Turkusowe protokaty - budynki\n", "Legenda",
                 JOptionPane.INFORMATION_MESSAGE));
-        option.addActionListener((ActionEvent e) -> JOptionPane.showMessageDialog(frame, "Opcje:\n", "Opcje",
+        options.addActionListener((ActionEvent e) -> JOptionPane.showMessageDialog(frame, "Opcje:\n", "Opcje",
                 JOptionPane.INFORMATION_MESSAGE));
         menuBar.setLayout((new FlowLayout(FlowLayout.LEFT)));
+        menuBar.add(options);
         menuBar.add(legenda);
-        menuBar.add(option);
         return menuBar;
     }
+//        JMenuBar menuBar = new JMenuBar();
+//
+//        JMenu optionsMenu = new JMenu("Opcje");
+//        JMenuItem menuItem1 = new JMenuItem("Opcja 1");
+//        JMenuItem menuItem2 = new JMenuItem("Opcja 2");
+//        optionsMenu.add(menuItem1);
+//        optionsMenu.add(menuItem2);
+//
+//        JMenuItem legenda = new JMenuItem("Legenda");
+//
+//        legenda.addActionListener((ActionEvent e) -> JOptionPane.showMessageDialog(frame,
+//                "Leganda:\n" +
+//                        "* Złote 10-cio katy - drzewa\n" +
+//                        "* Turkusowe protokaty - budynki\n", "Legenda",
+//                JOptionPane.INFORMATION_MESSAGE));
+//
+//        menuBar.setLayout(new FlowLayout(FlowLayout.LEFT));
+//        menuBar.add(optionsMenu);
+//        menuBar.add(legenda);
+//
+//        return menuBar;
+//    }
 }
